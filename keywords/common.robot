@@ -1,5 +1,6 @@
 ***Settings***
 Library     SeleniumLibrary
+Library     String
 
 ***Keywords***
 Wait until element visible and click
@@ -28,7 +29,22 @@ Get element attribute and compare
     ${actual}=   Get Element Attribute     ${element}   ${attribute}
     Should Be Equal     ${actual}      ${expected}
 
-Calculate discounted price    
+Calculate discounted price   
+    [Arguments]         ${subTotal}     ${discount}     ${grandTotal}
+    ${subTotal1}=   Remove String  ${subTotal}     $   
+    ${actualSubtotal}=    Convert To Number    ${subTotal1}
+    ${discount1}=   Remove String  ${discount}     -$   
+    ${actualDiscount}=    Convert To Number    ${discount1}
+    ${grandTotal1}=   Remove String  ${grandTotal}     $   
+    ${actualGrandTotal}=    Convert To Number    ${grandTotal1}
+    ${expectedGrandTotal}=      Evaluate    ${actualSubtotal} - ${actualDiscount}
+    Set Test Variable       ${actualGrandTotal}
+    Set Test Variable       ${expectedGrandTotal}
+
+
+
+
+
 
 
     

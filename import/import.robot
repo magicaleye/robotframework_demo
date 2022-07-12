@@ -7,7 +7,6 @@ Resource    ../keywords/dashboardPage/dashboard.robot
 Resource    ../keywords/homePage/home.robot
 Resource    ../keywords/productPage/mobilePage.robot
 
-
 # Import elements
 Resource    ../elements/homePage/loginAndRegisterElements.robot
 Resource    ../elements/homePage/homePageElements.robot

@@ -9,9 +9,15 @@ Test Setup         Run Keywords
 Test Teardown       Close Browser
 
 ***Test Cases***
-TC_04: Verify that cost of product in list page and details page are equal
+# TC_04: Verify that cost of product in list page and details page are equal
+#     Go to Mobile products page
+#     Get a mobile product price from list  Sony Xperia
+#     Get price from product details page  Sony Xperia
+#     Price from list and product details page should be equal
+
+TC_05: Verify Discount Coupon works correctly   
     Go to Mobile products page
-    Get a mobile product price from list  Sony Xperia
-    Get price from product details page  Sony Xperia
-    Price from list and product details page should be equal
+    Add a product to cart  Sony Xperia
+    Apply discount code  GURU50
+    Verify grand total after coupon applied
     
