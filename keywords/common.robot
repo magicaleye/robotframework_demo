@@ -41,6 +41,14 @@ Calculate discounted price
     Set Test Variable       ${actualGrandTotal}
     Set Test Variable       ${expectedGrandTotal}
 
+Clear text and input
+    [Arguments]     ${element}      ${text} 
+    Wait Until Element Is Visible   ${element}
+    Clear Element Text      ${element}
+    Input Text      ${element}      ${text}
+
+
+
 
 
 

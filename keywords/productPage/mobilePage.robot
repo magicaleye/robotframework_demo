@@ -35,3 +35,32 @@ Verify grand total after coupon applied
     Calculate discounted price  ${subTotal}     ${discount}     ${grandTotal}
     Should Be Equal     ${actualGrandTotal}      ${expectedGrandTotal}
 
+Update purchase quantity
+    [Arguments]     ${quantity}
+    Clear text and input  ${SC_IF_Quantity}  501
+    Click Element       ${SC_BTN_UpdateQuantity}
+
+Verify error message displayed
+    Element Should be Visible       ${SC_ERR_CannotBeOrdered}
+    Element Should be Visible       ${SC_ERR_Quantity_Maximum}
+
+Click on Empty cart button
+    Wait until element visible and click  ${SC_BTN_EmptyCart}  2s
+
+Verify cart is empty
+    Element Should be Visible       ${SC_TXT_CartIsEmpty}
+
+Add product to compare
+    [Arguments]         ${productName}  
+    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
+    Click Element       xpath://a[contains(text(), '${productName}')]/../..//a[contains(text(), 'Add to Compare')] 
+
+Check product has been added to comparison list message
+    [Arguments]         ${productName}  
+    Element Should be Visible       xpath://span[contains(text(), '${productName} has been added to comparison list')]
+
+Click Comparise product button
+    Click Element       ${MB_BTN_Compare}
+
+Verify product reflected in comparison Window
+    [Arguments]         ${productName}
