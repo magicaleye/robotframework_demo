@@ -1,1 +1,5 @@
-${URL}          http://http://live.techpanda.org/
+***Variables***
+${URL}                  http://live.techpanda.org/
+${firstName}            Automation
+${middlename}           
+${lastname}             FC

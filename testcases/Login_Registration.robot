@@ -1,11 +1,17 @@
 
 ***Settings***
 Library     SeleniumLibrary
-Library     ../variables/globalVar.robot
+Resource    ../variables/globalVar.robot
+Resource    ../keywords/common.robot
+Resource    ../keywords/login_registration.robot  
 Test Setup          Open Browser    ${URL}  Chrome
+Test Teardown       Close Browser
 
 ***Keywords***
 
 ***Test Cases***
 TC_01: Register success to system
-    Open Browser    
+    Maximize Browser Window
+    Go to User Registration page
+    Input user information      ${username}      ${password}
+    
