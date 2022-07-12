@@ -64,3 +64,4 @@ Click Comparise product button
 
 Verify product reflected in comparison Window
     [Arguments]         ${productName}
+    
