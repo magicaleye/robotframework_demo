@@ -16,7 +16,17 @@ Click and input Text
 
 Get text and compare
     [Documentation]     function to get text from an element and compare it with inputted value
-    [Arguments]         ${element}      ${expected}      ${actual}
+    [Arguments]         ${element}      ${expected}
+    Wait Until Element Is Visible   ${element}
+    ${actual}=   Get Text     ${element}
+    Should Be Equal     ${actual}      ${expected}
+
+Get element attribute and compare
+    [Documentation]     function to get text from an element and compare it with inputted value
+    [Arguments]         ${element}      ${attribute}      ${expected}
+    Wait Until Element Is Visible   ${element}
+    ${actual}=   Get Element Attribute     ${element}   ${attribute}
+    Should Be Equal     ${actual}      ${expected}
 
 
     
