@@ -28,5 +28,7 @@ Get element attribute and compare
     ${actual}=   Get Element Attribute     ${element}   ${attribute}
     Should Be Equal     ${actual}      ${expected}
 
+Calculate discounted price    
+
 
     
