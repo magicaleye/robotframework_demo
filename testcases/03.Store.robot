@@ -5,7 +5,7 @@ Resource    ../import/import.robot
 Test Setup         Run Keywords     
 ...     Open Browser    ${URL}  ${browser}    
 ...     AND     Maximize Browser Window
-...     AND     Set Selenium Speed      0.2s
+...     AND     Set Selenium Speed      0.2
 Test Teardown       Close Browser
 
 ***Test Cases***
@@ -42,6 +42,8 @@ TC_07: Verify that you are able to compare two products
     Click Comparise product button
     Switch Window   NEW
     Maximize Browser Window
+    Verify product reflected in comparison Window  Sony Xperia  ${xperia_price}  ${xperia_SKU}
+    Verify product reflected in comparison Window  IPhone       ${iphone_price}  ${iphone_SKU}
     Click close window button
 
 TC_08: Verify you can share wishlist to other people using email

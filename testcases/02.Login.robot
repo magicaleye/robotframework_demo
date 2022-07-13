@@ -5,7 +5,7 @@ Resource    ../import/import.robot
 Suite Setup         Run Keywords     
 ...     Open Browser    ${URL}  ${browser}    
 ...     AND     Maximize Browser Window
-...     AND     Set Selenium Speed      0.5s
+...     AND     Set Selenium Speed      0.2
 Suite Teardown       Close Browser
 
 ***Test Cases***

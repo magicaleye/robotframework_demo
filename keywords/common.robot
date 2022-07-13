@@ -29,31 +29,13 @@ Get element attribute and compare
     ${actual}=   Get Element Attribute     ${element}   ${attribute}
     Should Be Equal     ${actual}      ${expected}
 
-Calculate discounted price  
-    [Documentation]     Get price as text, then remove special characters and convert to number value
-    [Arguments]         ${subTotal}     ${discount}     ${grandTotal}
-    ${subTotal1}=   Remove String  ${subTotal}     $   
-    ${actualSubtotal}=    Convert To Number    ${subTotal1}
-    ${discount1}=   Remove String  ${discount}     -$   
-    ${actualDiscount}=    Convert To Number    ${discount1}
-    ${grandTotal1}=   Remove String  ${grandTotal}     $   
-    ${actualGrandTotal}=    Convert To Number    ${grandTotal1}
-    ${expectedGrandTotal}=      Evaluate    ${actualSubtotal} - ${actualDiscount}
-    Set Test Variable       ${actualGrandTotal}
-    Set Test Variable       ${expectedGrandTotal}
-
-Calculate price of item and shipping fee
-    [Documentation]     Get price as text, then remove special characters and convert to number value
-    [Arguments]         ${subTotal}     ${fee}     ${grandTotal}
-    ${subTotal1}=   Remove String  ${subTotal}     $   
-    ${actualSubtotal}=    Convert To Number    ${subTotal1}
-    ${fee1}=   Remove String  ${fee}     $   
-    ${actualFee}=    Convert To Number    ${fee1}
-    ${grandTotal1}=   Remove String  ${grandTotal}     $   
-    ${actualGrandTotal}=    Convert To Number    ${grandTotal1}
-    ${expectedGrandTotal}=      Evaluate    ${actualSubtotal} + ${actualFee}
-    Set Test Variable       ${actualGrandTotal}
-    Set Test Variable       ${expectedGrandTotal}    
+Get actual price
+    [Documentation]     Get price as text, then remove currency sign and convert text to number
+    [Arguments]     ${element}      
+    ${price}=   Get Text      ${element}
+    ${getPriceNumber}=     Remove String    ${price}    -   $
+    ${actualPrice}=     Convert to Number   ${getPriceNumber}
+    RETURN      ${actualPrice}
 
 Clear text and input
     [Arguments]     ${element}      ${text} 

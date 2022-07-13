@@ -14,18 +14,16 @@ Apply discount code
     Click Element       ${SC_BTN_ApplyCoupon}
 
 Verify grand total after coupon applied
-    ${subTotal}=    Get Text        ${SC_TXT_Subtotal}   
-    ${discount}=    Get Text        ${SC_TXT_Discounted}
-    ${grandTotal}=  Get Text        ${SC_TXT_GrandTotal}
-    Calculate discounted price  ${subTotal}     ${discount}     ${grandTotal}
-    Should Be Equal     ${actualGrandTotal}      ${expectedGrandTotal}
+    ${subTotal}=    Get actual price    ${SC_TXT_Subtotal}   
+    ${discount}=    Get actual price    ${SC_TXT_Discounted}
+    ${grandTotal}=  Get actual price    ${SC_TXT_GrandTotal}
+    Should Be True     ${grandTotal} == ${subTotal} - ${discount}
 
 Verify grand total after shipping fee applied
-    ${subTotal}=    Get Text        ${SC_TXT_Subtotal}   
-    ${fee}=         Get Text        ${SC_TXT_ShippingFee}
-    ${grandTotal}=  Get Text        ${SC_TXT_GrandTotal}
-    Calculate price of item and shipping fee  ${subTotal}     ${fee}     ${grandTotal}
-    Should Be Equal     ${actualGrandTotal}      ${expectedGrandTotal}   
+    ${subTotal}=    Get actual price    ${SC_TXT_Subtotal}   
+    ${fee}=         Get actual price    ${SC_TXT_ShippingFee}
+    ${grandTotal}=  Get actual price    ${SC_TXT_GrandTotal}
+    Should Be True     ${grandTotal} == ${subTotal} + ${fee}
 
 Update purchase quantity
     [Arguments]     ${quantity}

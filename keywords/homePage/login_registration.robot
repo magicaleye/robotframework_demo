@@ -4,15 +4,15 @@ Resource    ../../import/import.robot
 
 ***Keywords***
 Go to User Registration page
-    Wait until element visible and click  ${BTN_Account}  5s
+    Wait until element visible and click  ${BTN_Account}  5
     Click Element       ${BTN_Account_Register}
     
 Go to Login page
-    Wait until element visible and click  ${BTN_Account}  5s
+    Wait until element visible and click  ${BTN_Account}  5
     Click Element       ${BTN_Account_Login}
 
 Go to My Account page
-    Wait until element visible and click  ${BTN_Account}  5s
+    Wait until element visible and click  ${BTN_Account}  5
     Click Element       ${BTN_Account_MyAccount}
 
 Input user credentials for login

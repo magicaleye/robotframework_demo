@@ -5,7 +5,7 @@ Resource    ../../import/import.robot
 
 ***Keywords***
 Go to advanced search page
-    Wait until element visible and click  ${BTN_AdvancedSearch}  5s
+    Wait until element visible and click  ${BTN_AdvancedSearch}  5
 
 Input price range
     [Arguments]     ${minPrice}    ${maxPrice}
@@ -31,9 +31,7 @@ Verify product price are fetched
 Verify product price in search result are correct 
     ${count}=   Get Element Count   ${AS_RESULT_TXT_ProductPrice}
     FOR     ${i}    IN RANGE    1   ${count}
-        ${price}=   Get Text      xpath:(//span[@class='price'])[${i}]
-        ${price1}=     Remove String    ${price}    $
-        ${actualPrice}=     Convert to Number   ${price1}
+        ${actualPrice}=     Get actual price  xpath:(//span[@class='price'])[${i}]  
         Log To Console      Price: ${actualPrice}
         Should be True      ${minPrice} <= ${actualPrice} <= ${maxPrice}
     END    

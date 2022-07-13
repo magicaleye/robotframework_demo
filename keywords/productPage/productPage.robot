@@ -38,8 +38,12 @@ Click Comparise product button
     Click Element       ${PP_BTN_Compare}
 
 Verify product reflected in comparison Window
-    [Arguments]         ${productName}
-    # Todo
+    [Arguments]         ${productName}      ${price}    ${SKU}
+    Page Should Contain         ${productName}
+    Page Should Contain Image   xpath://a[@class='product-image' and @title='${productName}']/img
+    Page Should Contain         ${price}
+    Page Should Contain         ${SKU}
+
 
 Click close window button
     Click Element       ${PP_BTN_CloseWindow}
