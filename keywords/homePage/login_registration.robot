@@ -5,15 +5,15 @@ Resource    ../../import/import.robot
 ***Keywords***
 Go to User Registration page
     Wait until element visible and click  ${BTN_Account}  5s
-    Run Keyword And Ignore Error    Click Element       ${BTN_Account_Register}
+    Click Element       ${BTN_Account_Register}
     
 Go to Login page
     Wait until element visible and click  ${BTN_Account}  5s
-    Run Keyword And Ignore Error    Click Element       ${BTN_Account_Login}
+    Click Element       ${BTN_Account_Login}
 
 Go to My Account page
     Wait until element visible and click  ${BTN_Account}  5s
-    Run Keyword And Ignore Error    Click Element       ${BTN_Account_MyAccount}
+    Click Element       ${BTN_Account_MyAccount}
 
 Input user credentials for login
     [Arguments]               ${username}          ${password}

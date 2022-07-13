@@ -13,6 +13,7 @@ Resource    ../elements/homePage/loginAndRegisterElements.robot
 Resource    ../elements/homePage/homePageElements.robot
 Resource    ../elements/dashboardPage/dashboardElements.robot
 Resource    ../elements/productPage/productPageElements.robot
+Resource    ../elements/productPage/shoppingCartElements.robot
 
 # Import variables
 Resource    ../variables/userVariables.robot

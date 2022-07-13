@@ -3,7 +3,8 @@ ${DB_TXT_MyDashboard}                   xpath://h1[contains(text(), 'My Dashboar
 ${DB_TXT_ThanksForRegistering}          xpath://span[contains(text(), 'Thank you')]
 
 # Sidebar
-${DB_BTN_AccountInfo}           xpath://a[contains(text(), 'Account Information')]
+${DB_BTN_AccountInfo}           xpath://div[contains(@class, 'col-left')]//*[contains(text(), 'Account Information')]
+${DB_BTN_MyWishlist}            xpath://div[contains(@class, 'col-left')]//*[contains(text(), 'My Wishlist')]
 
 # Account information page
 ${DB_TXT_FirstName}                 id:firstname

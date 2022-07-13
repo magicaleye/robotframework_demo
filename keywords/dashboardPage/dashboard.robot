@@ -21,6 +21,9 @@ Verify data in the email field displayed correctly
     Get element attribute and compare  ${DB_TXT_Email}  value  ${username}
 
 ### Wishlist ###
+Go to My wishlist page from dashboard
+    Click element       ${DB_BTN_MyWishlist}
+
 Verify product added to wishlist successfully
     [Arguments]         ${productName}
     Element should be visible       xpath://span[contains(text(), '${productName} has been added to your wishlist')]
@@ -44,6 +47,10 @@ Remove item from wishlist
     [Arguments]         ${productName}
     Click Element       xpath://a[@title='${productName}']/../..//a[@title='Remove Item']   
     Handle Alert        action=ACCEPT
+
+Add product from wishlist to cart
+    [Arguments]         ${productName}
+    Click Element       xpath://a[@title='${productName}']/../..//button[@title='Add to Cart']   
 
 
 

@@ -35,4 +35,27 @@ Click on Empty cart button
 Verify cart is empty
     Element Should be Visible       ${SC_TXT_CartIsEmpty}
 
+# Shipping
+Select shipping country
+    [Arguments]         ${country}
+    Click Element       id:country
+    Click Element       xpath://option[contains(text(), '${country}')]
+
+Select shipping state/province
+    [Arguments]         ${region}
+    ${dropdownVisibility}=      Run keyword and return status   Element should be visible   id:region_id
+    IF  ${dropdownVisibility} == True
+        Click Element       id:region_id
+        Click Element       xpath://option[contains(text(), '${region}')]
+    ELSE
+        Click and input Text  id:region  ${region}  
+    END    
+
+Enter Zip code
+    [Arguments]         ${zipCode}
+    Input Text          ${SC_IF_Zip}        ${zipCode}
+
+Estimate shipping cost
+
+
     

@@ -5,7 +5,7 @@ Resource    ../import/import.robot
 Test Setup         Run Keywords     
 ...     Open Browser    ${URL}  ${browser}    
 ...     AND     Maximize Browser Window
-...     AND     Set Selenium Speed      0.5s
+...     AND     Set Selenium Speed      0.2s
 Test Teardown       Close Browser
 
 ***Test Cases***
@@ -48,11 +48,11 @@ TC_08: Verify you can share wishlist to other people using email
     Add product to wishlist  LG LCD
     Verify product added to wishlist successfully  LG LCD
     Click share Wishlist button
-    Enter share wishlist email and message  demo@gmail.com  My wishlist
+    Enter share wishlist email and message  demo@gmail.com       My wishlist
     Click share Wishlist button
     Verify wishlist shared successfully
     Verify my wishlist page have item  LG LCD
-    Remove item from wishlist  LG LCD       # Step used for clear data after run
+    # Remove item from wishlist  LG LCD       # Step used for clear data after run
 
 TC_09: Verify you can Add your Review
     Go to TV products page
@@ -66,6 +66,18 @@ TC_09: Verify you can Add your Review
     Enter required information for review  Product is good       Good       Automation test
     Click submit review button
     Verify review accepted for moderation message
+
+TC_10: Verify user is able to purchase product 
+    [Tags]  new
+    Go to Login page
+    Input user credentials for login  ${username}      ${password}
+    Click login button
+    Go to My Wishlist page from dashboard
+    Add product from wishlist to cart  LG LCD
+    Select shipping country  United States
+    Select shipping state/province  New York
+    Enter Zip code  543423
+
 
 
 
