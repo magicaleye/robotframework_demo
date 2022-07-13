@@ -32,6 +32,5 @@ Verify product price in search result are correct
     ${count}=   Get Element Count   ${AS_RESULT_TXT_ProductPrice}
     FOR     ${i}    IN RANGE    1   ${count}
         ${actualPrice}=     Get actual price  xpath:(//span[@class='price'])[${i}]  
-        Log To Console      Price: ${actualPrice}
         Should be True      ${minPrice} <= ${actualPrice} <= ${maxPrice}
     END    

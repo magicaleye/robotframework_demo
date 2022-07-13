@@ -35,6 +35,7 @@ Get actual price
     ${price}=   Get Text      ${element}
     ${getPriceNumber}=     Remove String    ${price}    -   $
     ${actualPrice}=     Convert to Number   ${getPriceNumber}
+    Log To Console      \nActual price: ${actualPrice}
     RETURN      ${actualPrice}
 
 Clear text and input
@@ -43,8 +44,11 @@ Clear text and input
     Clear Element Text      ${element}
     Input Text      ${element}      ${text}
 
-
-
+Get value from Json node
+    [Arguments]     ${jsonBody}     ${node}     ${index}
+    ${list}=      Get Value from Json     ${jsonBody}  ${node}
+    ${getValueFromList}=         Get from List   ${list}   ${index}
+    RETURN  ${getValueFromList}
 
 
 

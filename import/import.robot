@@ -8,6 +8,7 @@ Resource    ../keywords/homePage/search.robot
 Resource    ../keywords/productPage/productPage.robot
 Resource    ../keywords/productPage/storeCheckoutPage.robot
 Resource    ../keywords/dashboardPage/dashboard.robot
+Resource    ../keywords/api/apiTest.robot
 
 # Import elements
 Resource    ../elements/homePage/loginAndRegisterElements.robot
@@ -18,4 +19,4 @@ Resource    ../elements/productPage/productPageElements.robot
 Resource    ../elements/productPage/shoppingCartElements.robot
 
 # Import variables
-Resource    ../variables/userVariables.robot
+Resource    ../data/userVariables.robot

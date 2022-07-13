@@ -1,7 +1,7 @@
 
 ***Settings***
 Library     SeleniumLibrary
-Resource    ../import/import.robot 
+Resource    ../../import/import.robot 
 Test Setup         Run Keywords     
 ...     Open Browser    ${URL}  ${browser}    
 ...     AND     Maximize Browser Window
@@ -10,21 +10,21 @@ Test Teardown       Close Browser
 
 ***Test Cases***
 TC_04: Verify that cost of product in list page and details page are equal
-    [Tags]  store
+    [Tags]  store   ui
     Go to Mobile products page
     Get a mobile product price from list  Sony Xperia
     Get price from product details page  Sony Xperia
     Price from list and product details page should be equal
 
 TC_05: Verify Discount Coupon works correctly   
-    [Tags]  store
+    [Tags]  store   ui
     Go to Mobile products page
     Add a product to cart  Sony Xperia
     Apply discount code  GURU50
     Verify grand total after coupon applied
 
 TC_06: Verify that you can't add more 500 items of product
-    [Tags]  store
+    [Tags]  store   ui
     Go to Mobile products page
     Add a product to cart  Sony Xperia
     Update purchase quantity  501
@@ -33,7 +33,7 @@ TC_06: Verify that you can't add more 500 items of product
     Verify cart is empty
 
 TC_07: Verify that you are able to compare two products
-    [Tags]  store
+    [Tags]  store   ui
     Go to Mobile products page
     Add product to compare  IPhone
     Check product has been added to comparison list message  IPhone
@@ -47,7 +47,7 @@ TC_07: Verify that you are able to compare two products
     Click close window button
 
 TC_08: Verify you can share wishlist to other people using email
-    [Tags]  store
+    [Tags]  store   ui
     Go to Login page
     Input user credentials for login  ${username}      ${password}
     Click login button
@@ -61,7 +61,7 @@ TC_08: Verify you can share wishlist to other people using email
     Verify my wishlist page have item  LG LCD
 
 TC_09: Verify you can Add your Review
-    [Tags]  store
+    [Tags]  store   ui
     Go to TV products page
     Go to product details page  Samsung LCD
     Click add review button
@@ -75,7 +75,7 @@ TC_09: Verify you can Add your Review
     Verify review accepted for moderation message
 
 TC_10: Verify user is able to purchase product 
-    [Tags]  store
+    [Tags]  store   ui
     Go to Login page
     Input user credentials for login  ${username}      ${password}
     Click login button
@@ -101,7 +101,7 @@ TC_10: Verify user is able to purchase product
     Verify order placed successfully
 
 TC_11: Verify Search functionality  
-    [Tags]  search
+    [Tags]  search  ui
     Go to advanced search page
     Input price range  0  150
     Click search button
