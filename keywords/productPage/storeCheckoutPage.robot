@@ -5,7 +5,7 @@ Resource    ../../import/import.robot
 ***Keywords***
 Add a product to cart
     [Arguments]     ${productName}
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
+    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5
     Click Element       xpath://a[contains(text(), '${productName}')]/../..//button[@title='Add to Cart']
 
 Apply discount code
@@ -27,7 +27,7 @@ Verify grand total after shipping fee applied
 
 Update purchase quantity
     [Arguments]     ${quantity}
-    Clear text and input  ${SC_IF_Quantity}  501
+    Clear text and input  ${SC_IF_Quantity}  ${quantity}
     Click Element       ${SC_BTN_UpdateQuantity}
 
 Verify error message displayed
@@ -35,7 +35,7 @@ Verify error message displayed
     Element Should be Visible       ${SC_ERR_Quantity_Maximum}
 
 Click on Empty cart button
-    Wait until element visible and click  ${SC_BTN_EmptyCart}  2s
+    Wait until element visible and click  ${SC_BTN_EmptyCart}  5
 
 Verify cart is empty
     Element Should be Visible       ${SC_TXT_CartIsEmpty}
@@ -92,20 +92,20 @@ Enter billing State/province
 
 Click continue button of checkout step
     [Arguments]     ${step}
-    Wait until element visible and click        xpath://h2[contains(text(), '${step}')]/../..//span[contains(text(), 'Continue')]     5s
+    Wait until element visible and click        xpath://h2[contains(text(), '${step}')]/../..//span[contains(text(), 'Continue')]     5
 
 Verify Flat Rate displayed
-    Wait until element is visible   xpath://dt[contains(text(), 'Flat Rate')]   5s
+    Wait until element is visible   xpath://dt[contains(text(), 'Flat Rate')]   5
     Element should be visible       xpath://dt[contains(text(), 'Flat Rate')]
 
 Choose payment type
     [Arguments]         ${type}   
-    Wait until element visible and click  xpath://label[contains(text(), '${type}')]/preceding-sibling::input       5s           
+    Wait until element visible and click  xpath://label[contains(text(), '${type}')]/preceding-sibling::input       5          
 
 Click place order button
-    Wait until element visible and click   ${SC_CO_BTN_PlaceOrder}  5s
+    Wait until element visible and click   ${SC_CO_BTN_PlaceOrder}  5
 
 Verify order placed successfully
-    Wait until element is visible       ${SC_CO_TXT_OrderPlaced}        5s
+    Wait until element is visible       ${SC_CO_TXT_OrderPlaced}        5
     Element should be visible       ${SC_CO_TXT_OrderPlaced}        
   

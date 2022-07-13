@@ -11,7 +11,7 @@ Go to product details page
 ### Pricing ###
 Get a mobile product price from list
     [Arguments]     ${productName}
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
+    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5
     ${price1}=   Get Text    xpath://a[contains(text(), '${productName}')]/../..//span[@class='price']
     Set Test Variable       $price1
 
@@ -27,7 +27,7 @@ Price from list and product details page should be equal
 ### Comparison ###
 Add product to compare
     [Arguments]         ${productName}  
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
+    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5
     Click Element       xpath://a[contains(text(), '${productName}')]/../..//a[contains(text(), 'Add to Compare')] 
 
 Check product has been added to comparison list message
@@ -51,7 +51,7 @@ Click close window button
 ### Wishlist ###
 Add product to wishlist
     [Arguments]         ${productName}
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
+    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5
     Click Element       xpath://a[contains(text(), '${productName}')]/../..//a[contains(text(), 'Add to Wishlist')] 
 
 ### Reviewing ###
