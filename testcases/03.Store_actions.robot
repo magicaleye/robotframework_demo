@@ -98,6 +98,21 @@ TC_10: Verify user is able to purchase product
     Click place order button
     Verify order placed successfully
 
+TC_11: Verify Search functionality  
+    [Tags]  search
+    Go to advanced search page
+    Input price range  0  150
+    Click search button
+    Verify product names are fetched
+    Verify product price are fetched
+    Verify product price in search result are correct 
+    Go to advanced search page
+    Input price range  151  1000
+    Click search button
+    Verify product names are fetched
+    Verify product price are fetched
+    Verify product price in search result are correct
+
 
 
 
