@@ -14,7 +14,7 @@ Add a new place
     Log To Console      \n${response.json()}
     Set Test Variable   ${response}
     Response status code should be  200
-    Verify response data with a value  status  OK  0
+    Verify response data with a value  status  OK
     Set place_id variable for later use 
 
 Get created place
@@ -23,7 +23,9 @@ Get created place
     Log To Console      \n${response.json()}
     Set Test Variable   ${response} 
     Response status code should be  200
-    Verify response data and request body  name  0
+    Verify response data and request body  name
+    Verify response data and request body  phone_number
+    Verify response data and request body  address
 
 Update created place
     [Tags]  api
@@ -31,7 +33,7 @@ Update created place
     Log To Console      \n${response.json()}
     Set Test Variable   ${response}
     Response status code should be  200
-    Verify response data and request body  name  0
+    Verify response data and request body  name
 
 Delete created place
     [Tags]  api
@@ -41,4 +43,4 @@ Delete created place
     Log To Console      \n${response.json()}
     Set Test Variable   ${response} 
     Response status code should be  200
-    Verify response data with a value  status  OK  0
+    Verify response data with a value  status  OK

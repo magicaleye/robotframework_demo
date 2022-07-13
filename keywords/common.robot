@@ -45,9 +45,9 @@ Clear text and input
     Input Text      ${element}      ${text}
 
 Get value from Json node
-    [Arguments]     ${jsonBody}     ${node}     ${index}
+    [Arguments]     ${jsonBody}     ${node}
     ${list}=      Get Value from Json     ${jsonBody}  ${node}
-    ${getValueFromList}=         Get from List   ${list}   ${index}
+    ${getValueFromList}=         Get from List   ${list}    0
     RETURN  ${getValueFromList}
 
 
