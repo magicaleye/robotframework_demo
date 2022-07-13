@@ -1,7 +1,15 @@
 # robotframework_demo
 
-Execute command
+***Important: remember to replace your username and password, and your favorite browser***
 
-robot --variable username:username --variable password:password --variable browser:chrome testcases/
+## Execute command
 
-remember to replace your username and password, and your favorite browser
+> robot --variable username:username --variable password:password --variable browser:chrome testcases/
+
+## Run with custom output directory
+
+> robot --variable username:username --variable password:password --variable browser:chrome --outputdir ./report testcases/
+
+## Run with tag
+
+> robot --variable username:username --variable password:password --variable browser:chrome -i tag testcases/
