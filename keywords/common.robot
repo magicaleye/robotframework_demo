@@ -29,7 +29,8 @@ Get element attribute and compare
     ${actual}=   Get Element Attribute     ${element}   ${attribute}
     Should Be Equal     ${actual}      ${expected}
 
-Calculate discounted price   
+Calculate discounted price  
+    [Documentation]     Get price as text, then remove special characters and convert to number value
     [Arguments]         ${subTotal}     ${discount}     ${grandTotal}
     ${subTotal1}=   Remove String  ${subTotal}     $   
     ${actualSubtotal}=    Convert To Number    ${subTotal1}

@@ -37,4 +37,36 @@ TC_07: Verify that you are able to compare two products
     Check product has been added to comparison list message  Sony Xperia
     Click Comparise product button
     Switch Window   NEW
-    
+    Maximize Browser Window
+    Click close window button
+
+TC_08: Verify you can share wishlist to other people using email
+    Go to Login page
+    Input user credentials for login  ${username}      ${password}
+    Click login button
+    Go to TV products page
+    Add product to wishlist  LG LCD
+    Verify product added to wishlist successfully  LG LCD
+    Click share Wishlist button
+    Enter share wishlist email and message  demo@gmail.com  My wishlist
+    Click share Wishlist button
+    Verify wishlist shared successfully
+    Verify my wishlist page have item  LG LCD
+    Remove item from wishlist  LG LCD       # Step used for clear data after run
+
+TC_09: Verify you can Add your Review
+    Go to TV products page
+    Go to product details page  Samsung LCD
+    Click add review button
+    Rate product  5
+    Click submit review button
+    Verify Required field error showing under field  your though
+    Verify Required field error showing under field  Summary
+    Verify Required field error showing under field  nickname
+    Enter required information for review  Product is good       Good       Automation test
+    Click submit review button
+    Verify review accepted for moderation message
+
+
+
+

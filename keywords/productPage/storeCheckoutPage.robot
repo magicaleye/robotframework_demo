@@ -3,21 +3,6 @@ Library     SeleniumLibrary
 Resource    ../../import/import.robot
 
 ***Keywords***
-Get a mobile product price from list
-    [Arguments]     ${productName}
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
-    ${price1}=   Get Text    xpath://a[contains(text(), '${productName}')]/../..//span[@class='price']
-    Set Test Variable       $price1
-
-Get price from product details page
-    [Arguments]     ${productName}
-    Click Element       xpath://a[contains(text(), '${productName}')]
-    ${price2}=   Get Text    ${MB_TXT_ProductPrice}
-    Set Test Variable       $price2
-
-Price from list and product details page should be equal
-    Should Be Equal     ${price1}   ${price2}
-
 Add a product to cart
     [Arguments]     ${productName}
     Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
@@ -50,18 +35,4 @@ Click on Empty cart button
 Verify cart is empty
     Element Should be Visible       ${SC_TXT_CartIsEmpty}
 
-Add product to compare
-    [Arguments]         ${productName}  
-    Wait until element is visible       xpath://a[contains(text(), '${productName}')]   5s
-    Click Element       xpath://a[contains(text(), '${productName}')]/../..//a[contains(text(), 'Add to Compare')] 
-
-Check product has been added to comparison list message
-    [Arguments]         ${productName}  
-    Element Should be Visible       xpath://span[contains(text(), '${productName} has been added to comparison list')]
-
-Click Comparise product button
-    Click Element       ${MB_BTN_Compare}
-
-Verify product reflected in comparison Window
-    [Arguments]         ${productName}
     

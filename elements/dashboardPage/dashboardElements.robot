@@ -10,3 +10,10 @@ ${DB_TXT_FirstName}                 id:firstname
 ${DB_TXT_MiddleName}                id:middlename
 ${DB_TXT_LastName}                  id:lastname
 ${DB_TXT_Email}                     id:email
+
+# Wishlist page
+${DB_BTN_ShareWishlist}             xpath://button[@title='Share Wishlist']
+${DB_BTN_RemoveWishlistItem}        xpath://button[@title='Remove Item']
+${DB_IF_EmailToShare}               id:email_address
+${DB_IF_ShareMessage}               id:message
+${DB_TXT_WishlistShared}            xpath://span[contains(text(), 'Your Wishlist has been shared')]           
