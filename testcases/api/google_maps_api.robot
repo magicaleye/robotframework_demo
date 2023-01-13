@@ -2,7 +2,7 @@
 Library     RequestsLibrary
 Library     JSONLibrary
 Library     Collections
-Default Tags    api
+Force Tags  api
 
 Resource    ../../import/import.robot
 
