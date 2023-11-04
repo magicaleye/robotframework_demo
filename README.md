@@ -10,6 +10,6 @@
 
 > robot --variable username:username --variable password:password --variable browser:chrome --outputdir ./report testcases/
 
-## Run with tag
+## Run with tags
 
 > robot --variable username:username --variable password:password --variable browser:chrome -i tag testcases/
